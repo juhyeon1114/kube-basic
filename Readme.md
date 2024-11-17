@@ -27,3 +27,35 @@ docker login
 ```shell
 docker push kai1114/hello
 ```
+
+<br>
+
+### k8s 대시보드 접속
+
+1. 대시보드 실행
+
+```shell
+kubectl proxy
+```
+
+2. 계정 생성
+
+```shell
+kubectl apply -f adminuser.yaml
+```
+
+3. 권한 부여
+
+```shell
+kubectl apply -f adminuser-role.yaml
+```
+
+3. 토큰 발행
+
+```shell
+kubectl -n kubernetes-dashboard create token admin-user
+```
+
+4. 접속
+
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login

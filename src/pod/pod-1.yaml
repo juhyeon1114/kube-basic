@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: pod-1
+    labels:
+      type: web
+      env: dev
+spec:
+    containers:
+    - name: container-1
+      image: kai1114/hello
+      ports:
+      - containerPort: 8000
