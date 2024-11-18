@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-port-service-1
+spec:
+  selector:
+    app: pod-2
+  ports:
+    - port: 9001
+      targetPort: 8000
+      nodePort: 30000
+  type: NodePort
+  externalTrafficPolicy: Local # Node에 존재하는 Pod로 트래픽 전달

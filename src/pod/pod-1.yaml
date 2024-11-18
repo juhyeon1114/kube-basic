@@ -5,6 +5,7 @@ metadata:
     labels:
       type: web
       env: dev
+      app: pod-1
 spec:
     containers:
     - name: container-1
