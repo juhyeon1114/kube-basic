@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-map-1
+data:
+  PROFILE: "dev"
+  KEY: "value1"

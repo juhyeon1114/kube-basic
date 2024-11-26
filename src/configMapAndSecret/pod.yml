@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-cm-1
+spec:
+  containers:
+    - name: container
+      image: kai1114/hello
+      envFrom:
+        - configMapRef:
+            name: config-map-1
+        - secretRef:
+            name: secret-1
