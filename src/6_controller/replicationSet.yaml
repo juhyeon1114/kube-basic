@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replication-set-1
+spec:
+  replicas: 1 # 구동하고 싶은 Pod의 수
+  selector:
+    matchLabels:
+      type: web
+  template:
+    metadata:
+      name: pod-1
+      labels:
+        type: web
+    spec:
+      containers:
+        - name: container-1
+          image: kai1114/hello
+      terminationGracePeriodSeconds: 0
