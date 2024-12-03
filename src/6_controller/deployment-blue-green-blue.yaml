@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: replica-blue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      ver: v1 # 라벨로 버전을 구분해서 Blue/Green 배포 구현
+  template:
+    metadata:
+      labels:
+        ver: v1
+    spec:
+      containers:
+        - name: container-3
+          image: kai1114/hello:v1

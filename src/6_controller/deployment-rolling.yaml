@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-2
+spec:
+  selector:
+    matchLabels:
+      type: app
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  minReadySeconds: 10
+  template:
+    metadata:
+      labels:
+        type: app
+    spec:
+      containers:
+        - name: container-2
+          image: kai1114/hello
+      terminationGracePeriodSeconds: 10
